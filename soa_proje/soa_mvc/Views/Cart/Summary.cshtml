@@ -1,0 +1,20 @@
+﻿@using soa_mvc.Models
+@model soa_mvc.Models.Cart
+
+<style>
+    #cart{
+        color:white;
+    }
+</style>
+
+<ul class="navbar-nav d-flex">
+
+    <li id="cart" class="nav-item">
+	    <a class="nav-link" href="/Cart">
+		    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+		    (@Model.CartLines.Count)
+	    </a>
+        
+    </li>
+
+</ul>

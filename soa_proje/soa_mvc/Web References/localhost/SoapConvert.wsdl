@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TurkishLiraToDollar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TurkishLira" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TurkishLiraToDollarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TurkishLiraToDollarResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TurkishLiraToEuro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TurkishLira" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TurkishLiraToEuroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TurkishLiraToEuroResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TurkishLiraToDollarSoapIn">
+    <wsdl:part name="parameters" element="tns:TurkishLiraToDollar" />
+  </wsdl:message>
+  <wsdl:message name="TurkishLiraToDollarSoapOut">
+    <wsdl:part name="parameters" element="tns:TurkishLiraToDollarResponse" />
+  </wsdl:message>
+  <wsdl:message name="TurkishLiraToEuroSoapIn">
+    <wsdl:part name="parameters" element="tns:TurkishLiraToEuro" />
+  </wsdl:message>
+  <wsdl:message name="TurkishLiraToEuroSoapOut">
+    <wsdl:part name="parameters" element="tns:TurkishLiraToEuroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SoapConvertSoap">
+    <wsdl:operation name="TurkishLiraToDollar">
+      <wsdl:input message="tns:TurkishLiraToDollarSoapIn" />
+      <wsdl:output message="tns:TurkishLiraToDollarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TurkishLiraToEuro">
+      <wsdl:input message="tns:TurkishLiraToEuroSoapIn" />
+      <wsdl:output message="tns:TurkishLiraToEuroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapConvertSoap" type="tns:SoapConvertSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TurkishLiraToDollar">
+      <soap:operation soapAction="http://tempuri.org/TurkishLiraToDollar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurkishLiraToEuro">
+      <soap:operation soapAction="http://tempuri.org/TurkishLiraToEuro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SoapConvertSoap12" type="tns:SoapConvertSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TurkishLiraToDollar">
+      <soap12:operation soapAction="http://tempuri.org/TurkishLiraToDollar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TurkishLiraToEuro">
+      <soap12:operation soapAction="http://tempuri.org/TurkishLiraToEuro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapConvert">
+    <wsdl:port name="SoapConvertSoap" binding="tns:SoapConvertSoap">
+      <soap:address location="http://localhost:53541/SoapConvert.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SoapConvertSoap12" binding="tns:SoapConvertSoap12">
+      <soap12:address location="http://localhost:53541/SoapConvert.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

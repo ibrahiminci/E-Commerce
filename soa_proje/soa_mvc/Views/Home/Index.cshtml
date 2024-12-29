@@ -1,0 +1,95 @@
+﻿@using soa_mvc.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="p-5 mb-4 bg-body-tertiary rounded-3 jumbotron">
+	<div class="container">
+		<h1 class="display-5 fw-bold">CBU Shopping</h1>
+		<p class="col-md-8 fs-4">
+			Turgutlu'nun en büyük e-Ticaret Sayfası.Aradığınız her teknolojik ürün CBU Shopping'de.
+		</p>
+	</div>
+
+</div>
+
+<div class="container mb-5" style="flex: 3; box-sizing: border-box; text-align: center;">
+	<div class="row">
+		<div class="col-md-12">
+		</div>
+		<header style="margin-top: 30px;">
+			<h1>Günün Ürünü</h1>
+		</header>
+		<br>
+		<p id="placeResult"></p>
+		<p id="descResult"></p>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script>
+        const apiUrl = 'http://localhost:3000';
+
+        // Sayfa yüklendiğinde otomatik olarak çalışacak fonksiyon
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // API'ye istek at
+                axios.get(apiUrl)
+                    .then(response => {
+                        // API'den gelen veriyi kullan
+                        const place = response.data.place;
+                        const desc = response.data.desc;
+                        document.getElementById('placeResult').innerText = `${place}`;
+                        document.getElementById('descResult').innerText = `${desc}`;
+                    })
+                    .catch(error => {
+                        console.error('API isteği başarısız:', error);
+                    });
+            }, 5000); // 10 saniye bekletme süresi
+        });
+    </script>
+	</div>
+		</div>
+	
+
+
+<div class="container">
+
+    @Html.Partial("_ProductList", Model)
+
+
+</div>
+
+
+
+<div class="container pt-5 mb-5">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="map"></div>
+
+			<script>
+    // İsteğe bağlı: Harita başlatma fonksiyonu
+				function initMap() {
+
+
+        // Harita oluşturma
+					var map = new google.maps.Map(document.getElementById('map'), {
+					center: { lat: parseFloat(38.49227613398711), lng: parseFloat(27.706942441219148) },
+					zoom: 18
+					});
+
+        // İsteğe bağlı: Harita işlemleri buraya eklenebilir
+    }
+            </script>
+		</div>
+	</div>
+    
+	
+
+
+
+	<!-- Harita konteyneri -->
+
+</div>
+
+
+

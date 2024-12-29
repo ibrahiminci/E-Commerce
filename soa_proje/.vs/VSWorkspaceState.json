@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\soa_mvc",
+    "\\soa_mvc\\Entity",
+    "\\soa_mvc\\Models",
+    "\\soa_mvc\\obj",
+    "\\soa_mvc\\Properties",
+    "\\soa_mvc\\theme",
+    "\\soa_mvc\\Views",
+    "\\soa_mvc\\Views\\Account",
+    "\\soa_mvc\\Views\\Cart"
+  ],
+  "SelectedNode": "\\soa_proje.sln",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,154 @@
+﻿@using System.Activities.Expressions
+@using soa_mvc.Entity;
+@using soa_mvc.Models
+@model Product
+@{
+    ViewBag.Title = "Details";
+}
+<div id="product-details" class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <img src="/Upload/@Model.Image" alt="" class="img-fluid rounded" />
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>@Model.Name</h1>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+
+                        @if (Model.IsApproved)
+                        {
+                            <span class="badge bg-primary">Stokta</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Stokta Yok</span>
+                        }
+
+
+
+                        <span class="product-number">#23123123</span>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div id="description">
+                            @Model.Description
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half" aria-hidden="true"></i>
+                        <span class="badge bg-success">53</span>
+                    </div>
+                    <div id="write-review" class="col-md-4">
+                        <a href="#">Write a review</a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <h4 id="product-price">@Model.Price TL</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+	            <div class="col-md-12">
+                    
+
+                    @using (Html.BeginForm("AddToCart","Cart"))
+                    {
+
+                        @Html.HiddenFor(i=>i.Id)
+	                    <button type="submit" class="btn btn-success">
+	                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							Add To Cart
+						</button>
+
+                    }
+
+		            
+                    
+
+
+	            </div>
+            </div>
+        </div>
+    </div>
+    <div class="bd-example mt-3">
+        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        id="home-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#home-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="home-tab-pane"
+                        aria-selected="false"
+                        tabindex="-1">
+                    Açıklama
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#profile-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="profile-tab-pane"
+                        aria-selected="true">
+                    Ödeme Yöntemleri
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link"
+                        id="contact-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#contact-tab-pane"
+                        type="button"
+                        role="tab"
+                        aria-controls="contact-tab-pane"
+                        aria-selected="false"
+                        tabindex="-1">
+                    Yorumlar
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade"
+                 id="home-tab-pane"
+                 role="tabpanel"
+                 aria-labelledby="home-tab"
+                 tabindex="0">
+            </div>
+            <div class="tab-pane fade active show"
+                 id="profile-tab-pane"
+                 role="tabpanel"
+                 aria-labelledby="profile-tab"
+                 tabindex="0">
+            </div>
+            <div class="tab-pane fade"
+                 id="contact-tab-pane"
+                 role="tabpanel"
+                 aria-labelledby="contact-tab"
+                 tabindex="0">
+            </div>
+            <div class="tab-pane fade"
+                 id="disabled-tab-pane"
+                 role="tabpanel"
+                 aria-labelledby="disabled-tab"
+                 tabindex="0">
+            </div>
+        </div>
+    </div>
+</div>

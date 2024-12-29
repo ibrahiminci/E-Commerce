@@ -1,0 +1,29 @@
+﻿@using soa_mvc.Models;
+@model IEnumerable<ProductModel>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var urun in Model)
+    {
+        <div class="col mb-2">
+            <div class="card h-100">
+                <img src="/Upload/@urun.Image" class="card-img-top" alt="@urun.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id"> @urun.Name</a>
+                    </h5>
+                    <p class="card-text pt-2">
+                        @urun.Description
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary product-price"><i class="fa fa-try" aria-hidden="true"></i>@urun.Price</small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-info btn-sm float-end">
+                        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        Ürünü incele
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

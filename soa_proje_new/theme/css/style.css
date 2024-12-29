@@ -1,0 +1,19 @@
+footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
+
+
+#write-review {
+  margin-left: -50px;
+}
+#write-review a {
+  text-decoration: none;
+}
+
+#product-price {
+  font-size: 28px;
+  color: red;
+}

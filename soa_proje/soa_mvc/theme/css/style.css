@@ -1,0 +1,45 @@
+footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-title{
+    font-size: 16px;
+    font-weight:400;
+    color:#484848;
+    line-height: 1.35em;
+    height:34px;
+}
+
+.card-text{
+    font-size:12px;
+}
+
+.card-title a {
+    text-decoration: none;
+}
+
+#write-review {
+    margin-left: -50px;
+}
+#write-review a {
+  text-decoration: none;
+}
+
+#product-price {
+  font-size: 28px;
+  color: red;
+}
+
+.product-price {
+    color: #414141 !important;
+    font-weight: 700 !important;
+    font-size: 17px !important;
+}
+
+#product-details h1{
+    font-size:20px;
+    font-weight:700;
+}
